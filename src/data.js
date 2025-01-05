@@ -167,6 +167,12 @@ const updatedBook = { ...book, moviePublicationDate: "2001-12-19" };
 
 // console.log(updatedBook);
 
-const summary = `${title}, a ${pages}-page long book, was written by ${author} and published in ${publicationDate.split("-")[0]}`;
+const getYear = (str) => str.split("-")[0];
+
+const summary = `${title}, a ${pages}-page long book, was written by ${author} and published in ${getYear(publicationDate)}`;
 
 console.log(summary);
+
+// function getYear(str) {
+//   return str.split("-")[0];
+// }
