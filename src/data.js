@@ -165,4 +165,8 @@ const newGenres = [...genres, "epic fantasy"];
 
 const updatedBook = { ...book, moviePublicationDate: "2001-12-19" };
 
-console.log(updatedBook);
+// console.log(updatedBook);
+
+const summary = `${title}, a ${pages}-page long book, was written by ${author} and published in ${publicationDate.split("-")[0]}`;
+
+console.log(summary);
