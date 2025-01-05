@@ -145,7 +145,7 @@ function getBook(id) {
   return data.find((d) => d.id === id);
 }
 
-const book = getBook(2);
+const book = getBook(3);
 
 // const title = book.title;
 // const author = book.author;
@@ -185,9 +185,18 @@ const summary = `${title}, a ${pages}-page long book, was written by ${author} a
 
 // console.log(book.translations.spanish);
 
-console.log(book.reviews.librarything.reviewsCount);
-const countRight = book.reviews.librarything.reviewsCount || "no data";
-console.log(countRight);
+// console.log(book.reviews.librarything.reviewsCount);
+// const countRight = book.reviews.librarything.reviewsCount || "no data";
+// console.log(countRight);
+//
+// const count = book.reviews.librarything.reviewsCount ?? "no data";
+// console.log(count);
 
-const count = book.reviews.librarything.reviewsCount ?? "no data";
-console.log(count);
+function getTotalReviewCount(book) {
+  const goodread = book.reviews.goodreads.reviewsCount;
+  const librarything = book.reviews.librarything?.reviewsCount ?? 0;
+
+  return goodread + librarything;
+}
+
+console.log(getTotalReviewCount(book));
