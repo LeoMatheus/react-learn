@@ -153,4 +153,15 @@ const essentialData = books.map((book) => ({
   author: book.author,
 }));
 
-console.log(essentialData);
+// console.log(essentialData);
+
+const longBooks = books
+  .filter((book) => book.pages > 500)
+  .filter((book) => book.hasMovieAdaptation);
+// console.log(longBooks);
+
+const adventureBooks = books
+  .filter((book) => book.genres.includes("adventure"))
+  .map((book) => book.title);
+
+console.log(adventureBooks);
