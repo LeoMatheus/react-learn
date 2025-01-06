@@ -1,4 +1,5 @@
 const { log } = require("console");
+const { title } = require("process");
 
 const data = [
   {
@@ -136,3 +137,20 @@ const data = [
     },
   },
 ];
+
+function getBooks() {
+  return data;
+}
+
+const books = getBooks();
+// console.log([1, 2, 3, 4, 5].map((el) => el * 2));
+
+const titles = books.map((book) => book.title);
+// console.log(titles);
+
+const essentialData = books.map((book) => ({
+  title: book.title,
+  author: book.author,
+}));
+
+console.log(essentialData);

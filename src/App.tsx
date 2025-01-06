@@ -5,7 +5,6 @@ import { getBook, getBooks } from "./data";
 function App() {
   console.log("alou");
 
-  const [braum, setBraum] = useState(getBooks());
   return (
     <div className="App">
       <header className="App-header">
