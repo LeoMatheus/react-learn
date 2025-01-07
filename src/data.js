@@ -177,4 +177,16 @@ console.log(sorted);
 
 const sortedByPages = books.slice().sort((a, b) => b.pages - a.pages);
 
-console.log(sortedByPages);
+// console.log(sortedByPages);
+
+// 1) Add a Book
+const newBook = {
+  id: 6,
+  title: "Harry Potter and the Chamber of Secrets",
+  author: "J. K. Rowling",
+};
+const booksAfterAdd = [...books, newBook];
+
+console.log(booksAfterAdd);
+
+// 2) Delete book object from array
