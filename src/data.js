@@ -145,8 +145,6 @@ function getBook(id) {
   return data.find((d) => d.id === id);
 }
 
-const book = getBook(2);
-
-const title = book.title;
-const author = book.author;
-console.log(book, title, author);
+fetch("https://jsonplaceholder.typicode.com/todos")
+  .then((res) => res.json())
+  .then((data) => console.log(data));
