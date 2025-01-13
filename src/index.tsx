@@ -60,7 +60,7 @@ function App() {
 
 function Header() {
   return (
-    <header className="header footer">
+    <header className="header ">
       <h1>Fast React Pizza Co.</h1>
     </header>
   );
@@ -72,12 +72,22 @@ function Menu() {
   return (
     <main className="menu">
       <h2>Our menu</h2>
+
       {numPizzas > 0 ? (
-        <ul className="pizzas">
-          {pizzas.map((pizza) => (
-            <Pizza pizzaObj={pizza} key={pizza.name} />
-          ))}
-        </ul>
+        <React.Fragment>
+          <p>
+            The old oak tree stood sentinel at the edge of the meadow, its
+            gnarled branches reaching out like gnarled fingers. Sunlight
+            filtered through the leaves, dappling the grass below in a mosaic of
+            light and shadow. A gentle breeze rustled the leaves, creating a
+            soothing symphony of nature's whispers.
+          </p>
+          <ul className="pizzas">
+            {pizzas.map((pizza) => (
+              <Pizza pizzaObj={pizza} key={pizza.name} />
+            ))}
+          </ul>
+        </React.Fragment>
       ) : (
         <p>We're still working on our menu comeback later</p>
       )}
