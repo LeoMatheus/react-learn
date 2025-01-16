@@ -9,7 +9,7 @@
 }
 
 .button {
-  background-color: #4caf50; /* Green */
+  background-color: #4caf50;
   border: none;
   color: white;
   padding: 10px 20px;
@@ -17,17 +17,26 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 0 5px; /* Reduced margin for closer button spacing */
+  margin: 0 5px;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .h1 {
-  margin: 10px; /* Reduced margin for tighter layout */
-  font-size: 1.5em; /* Slightly smaller heading size */
+  margin: 10px;
+  font-size: 1.5em;
 }
 
-/* Optional: Add hover effect to buttons */
-.button:hover {
-  background-color: #3e8e41;
+.step-controls,
+.counter-controls {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.step-controls {
+  margin-left: 20px;
+}
+
+.date-container {
+  margin-top: 10px;
 }

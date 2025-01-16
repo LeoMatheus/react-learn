@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./index.css";
+
 export default function App() {
   return (
     <div className="container">
@@ -7,9 +8,11 @@ export default function App() {
     </div>
   );
 }
+
 function Counter() {
   const [count, setCount] = useState(0);
   const [step, setStep] = useState(1);
+
   function incrementCount() {
     setCount((c) => c + step);
   }
@@ -25,9 +28,10 @@ function Counter() {
   function decrementStep() {
     setStep((c) => c - 1);
   }
+
   return (
     <div>
-      <div style={{ display: "flex", justifyContent: "center" }}>
+      <div className="step-controls">
         <button className="button" onClick={decrementStep}>
           -
         </button>
@@ -37,7 +41,7 @@ function Counter() {
         </button>
       </div>
 
-      <div style={{ display: "flex" }}>
+      <div className="counter-controls">
         <button className="button" onClick={decrementCount}>
           -
         </button>
@@ -46,7 +50,8 @@ function Counter() {
           +
         </button>
       </div>
-      <div>
+
+      <div className="date-container">
         <DateToday days={count} />
       </div>
     </div>
@@ -57,7 +62,13 @@ function addDays(date: Date, days: number): Date {
   const newDate = new Date(date.getTime() + days * 24 * 60 * 60 * 1000);
   return newDate;
 }
-function DateToday(props: any) {
+
+function DateToday(props: { days: number }) {
   const today = new Date();
-  return <h1>{addDays(today, props.days).toDateString()}</h1>;
+  return (
+    <div>
+      {props.days !== 0 && <span>{props.days} days Days from today </span>}
+      {addDays(today, props.days).toDateString()}
+    </div>
+  );
 }
