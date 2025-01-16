@@ -46,6 +46,18 @@ function Counter() {
           +
         </button>
       </div>
+      <div>
+        <DateToday days={count} />
+      </div>
     </div>
   );
+}
+
+function addDays(date: Date, days: number): Date {
+  const newDate = new Date(date.getTime() + days * 24 * 60 * 60 * 1000);
+  return newDate;
+}
+function DateToday(props: any) {
+  const today = new Date();
+  return <h1>{addDays(today, props.days).toDateString()}</h1>;
 }
