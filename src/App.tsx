@@ -32,13 +32,21 @@ function Counter() {
   return (
     <div>
       <div className="step-controls">
-        <button className="button" onClick={decrementStep}>
-          -
-        </button>
+        <input
+          type="range"
+          min="0"
+          max="10"
+          value={step}
+          onChange={(e) => setStep(Number(e.target.value))}
+        />
+
+        {/* <button className="button" onClick={decrementStep}> */}
+        {/*   - */}
+        {/* </button> */}
         <h1 className="h1">Step: {step}</h1>
-        <button className="button" onClick={incrementStep}>
-          +
-        </button>
+        {/* <button className="button" onClick={incrementStep}> */}
+        {/*   + */}
+        {/* </button> */}
       </div>
 
       <div className="counter-controls">
