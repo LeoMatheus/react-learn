@@ -13,6 +13,10 @@ function Counter() {
   const [count, setCount] = useState(0);
   const [step, setStep] = useState(1);
 
+  function handleReset() {
+    setCount(0);
+    setStep(1);
+  }
   function incrementCount() {
     setCount((c) => c + step);
   }
@@ -53,7 +57,12 @@ function Counter() {
         <button className="button" onClick={decrementCount}>
           -
         </button>
-        <h1 className="h1">Counter: {count}</h1>
+        {/* <h1 className="h1">Counter: {count}</h1> */}
+        <input
+          type="text"
+          value={count}
+          onChange={(e) => setCount(Number(e.target.value))}
+        />
         <button className="button" onClick={incrementCount}>
           +
         </button>
@@ -62,6 +71,12 @@ function Counter() {
       <div className="date-container">
         <DateToday days={count} />
       </div>
+
+      {(count > 0 || step > 1) && (
+        <div>
+          <button onClick={handleReset}>Reset</button>
+        </div>
+      )}
     </div>
   );
 }
